@@ -3,8 +3,86 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Иван Айвазовский Куинджи</title>
-    <meta name="description" content="Информация о художнике Архипе Куинджи" />
+    <title>Архип Куинджи — Киберпанк</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+        /* Фон с неоновыми линиями */
+        body {
+            margin: 0;
+            font-family: 'Orbitron', monospace, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #00fff7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image:
+                radial-gradient(circle at 20% 30%, #00fff7 3px, transparent 4px),
+                radial-gradient(circle at 80% 70%, #ff00ff 2px, transparent 4px),
+                linear-gradient(90deg, rgba(0, 255, 247, 0.1) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px);
+            background-size: 100px 100px, 80px 80px, 20px 20px, 20px 20px;
+        }
+
+        header, main, footer {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 0 15px #00fff7;
+        }
+
+        h1, h2 {
+            text-shadow: 0 0 6px #00fff7, 0 0 10px #ff00ff;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1.5px;
+        }
+
+        header p {
+            font-style: italic;
+            color: #ff00ff;
+            margin-top: 0;
+            text-shadow: 0 0 6px #ff00ff;
+        }
+
+        p, ul {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: #00fff7cc;
+            text-shadow: 0 0 3px #00fff7aa;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            color: #ff00ffcc;
+        }
+
+        ul li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #00fff7;
+            text-shadow: 0 0 5px #00fff7;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            text-shadow: none;
+            background: transparent;
+            box-shadow: none;
+            margin-bottom: 2rem;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,9 +105,9 @@
                 Куинджи известен своими уникальными пейзажами с выразительным светом и цветом. Его знаменитые работы включают:
             </p>
             <ul>
-                <li>"Лунная ночь на Днепре"</li>
-                <li>"Березовая роща"</li>
-                <li>"После грозы"</li>
+                <li>«Лунная ночь на Днепре»</li>
+                <li>«Березовая роща»</li>
+                <li>«После грозы»</li>
             </ul>
         </section>
 
