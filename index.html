@@ -7,7 +7,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
-        /* Фон с неоновыми линиями */
         body {
             margin: 0;
             font-family: 'Orbitron', monospace, sans-serif;
@@ -22,6 +21,7 @@
                 linear-gradient(90deg, rgba(0, 255, 247, 0.1) 1px, transparent 1px),
                 linear-gradient(0deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px);
             background-size: 100px 100px, 80px 80px, 20px 20px, 20px 20px;
+            transition: background-image 0.5s ease;
         }
 
         header, main, footer {
@@ -56,6 +56,7 @@
         ul {
             list-style-type: none;
             padding-left: 0;
+            cursor: pointer;
         }
 
         ul li {
@@ -63,6 +64,7 @@
             padding-left: 1.5rem;
             margin-bottom: 0.6rem;
             color: #ff00ffcc;
+            transition: color 0.3s ease;
         }
 
         ul li::before {
@@ -71,6 +73,11 @@
             left: 0;
             color: #00fff7;
             text-shadow: 0 0 5px #00fff7;
+        }
+
+        ul li.red {
+            color: #ff3333 !important;
+            text-shadow: 0 0 7px #ff1a1a;
         }
 
         footer {
@@ -87,32 +94,31 @@
 <body>
     <header>
         <h1>Архип Иванович Куинджи</h1>
-        <p>Русский живописец-пейзажист XIX века</p>
+        <p>[translate:Русский живописец-пейзажист XIX века]</p>
     </header>
 
     <main>
         <section>
-            <h2>Краткая биография</h2>
+            <h2>[translate:Краткая биография]</h2>
             <p>
-                Архип Иванович Куинджи (1842–1910) — один из выдающихся русских художников-пейзажистов. Родился в Мариуполе,
-                изучал живопись в Императорской Академии Художеств в Санкт-Петербурге.
+                Архип Иванович Куинджи (1842–1910) — один из выдающихся русских художников-пейзажистов. [translate:Родился в Мариуполе, изучал живопись в Императорской Академии Художеств в Санкт-Петербурге.]
             </p>
         </section>
 
         <section>
-            <h2>Творчество</h2>
+            <h2>[translate:Творчество]</h2>
             <p>
-                Куинджи известен своими уникальными пейзажами с выразительным светом и цветом. Его знаменитые работы включают:
+                Куинджи известен своими уникальными пейзажами с выразительным светом и цветом. [translate:Его знаменитые работы включают:]
             </p>
-            <ul>
-                <li>«Лунная ночь на Днепре»</li>
-                <li>«Березовая роща»</li>
-                <li>«После грозы»</li>
+            <ul id="artworks">
+                <li>«[translate:Лунная ночь на Днепре]»</li>
+                <li>«[translate:Березовая роща]»</li>
+                <li>«[translate:После грозы]»</li>
             </ul>
         </section>
 
         <section>
-            <h2>Влияние и наследие</h2>
+            <h2>[translate:Влияние и наследие]</h2>
             <p>
                 Куинджи оказал значительное влияние на развитие русской живописи, за его вклад художественные круги отмечают
                 интерес к световым эффектам в пейзаже.
@@ -121,7 +127,8 @@
     </main>
 
     <footer>
-        <p>© 2025. Информация взята из открытых источников.</p>
+        <p>© 2025. [translate:Информация взята из открытых источников.]</p>
     </footer>
-</body>
-</html>
+
+<script>
+    const base64Background = "url('data:image/jpeg;base64,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
